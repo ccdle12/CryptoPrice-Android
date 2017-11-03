@@ -47,6 +47,6 @@ public class AppModule
     @Singleton
     public ExchangesGraph providesExchangesGraph()
     {
-        return new ExchangesGraph();
+        return ExchangesGraph.instanceOfExchangesGraph();
     }
 }

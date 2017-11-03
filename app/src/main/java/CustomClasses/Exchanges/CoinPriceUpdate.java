@@ -8,5 +8,5 @@ import java.util.ArrayList;
 
 public interface CoinPriceUpdate
 {
-    public String getUpdatedPrice(int coinID);
+    String getUpdatedPrice(int coinID);
 }

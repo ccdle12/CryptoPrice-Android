@@ -7,24 +7,35 @@ import java.util.HashMap;
 
 public class ExchangesGraph
 {
-    private HashMap<String, Exchange> exchangesTable;
+    private static ExchangesGraph instance = null;
+    private static HashMap<String, Exchange> exchangesTable;
 
-    public ExchangesGraph()
+
+    private ExchangesGraph() {}
+
+    public static ExchangesGraph instanceOfExchangesGraph()
     {
-        this.exchangesTable = new HashMap<String, Exchange>();
-        this.initAllExchanges();
+        if (instance == null)
+        {
+            instance = new ExchangesGraph();
+            exchangesTable = new HashMap<>();
+            initAllExchanges();
+        }
 
+        return instance;
     }
 
-    private void initAllExchanges()
+
+    private static void initAllExchanges()
     {
         Coinbase coinbase = new Coinbase();
-        this.exchangesTable.put(coinbase.exchangeName, coinbase);
+        exchangesTable.put(coinbase.exchangeName, coinbase);
     }
+
 
     public Exchange getExchange(String exchange)
     {
-        return this.exchangesTable.get(exchange);
+        return exchangesTable.get(exchange);
     }
 
 }
