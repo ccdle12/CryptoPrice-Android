@@ -4,6 +4,7 @@ import com.example.christophercoverdale.cryptoprice_android.MainActivity;
 
 import javax.inject.Singleton;
 
+import CustomClasses.Exchanges.Coinbase;
 import Dashboard.PFDashboardPresenter;
 import Dashboard.PFDashboardVC;
 import Managers.PFDataManager;
@@ -20,4 +21,6 @@ public interface AppComponent
     void inject(MainActivity mainActivity);
     void inject(PFDashboardVC dashboardVC);
     void inject(PFDashboardPresenter pFDashboardPresenter);
+    void inject(PFDataManager pfDataManager);
+    void inject(Coinbase coinbase);
 }

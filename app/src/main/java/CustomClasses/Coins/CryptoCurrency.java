@@ -1,4 +1,4 @@
-package CustomClasses;
+package CustomClasses.Coins;
 
 /**
  * Created by christophercoverdale on 03/11/2017.
@@ -6,6 +6,7 @@ package CustomClasses;
 
 public abstract class CryptoCurrency
 {
+    public int id;
     public double USDPrice;
     public String ticker;
 }

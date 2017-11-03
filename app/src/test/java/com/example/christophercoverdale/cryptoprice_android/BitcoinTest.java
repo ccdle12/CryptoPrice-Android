@@ -5,9 +5,7 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import CustomClasses.Bitcoin;
-
-import static org.junit.Assert.*;
+import CustomClasses.Coins.Bitcoin;
 
 /**
  * Created by christophercoverdale on 03/11/2017.
@@ -19,7 +17,7 @@ public class BitcoinTest
     @Before
     public void setUpBitcoinObject()
     {
-        this.bitcoin = new Bitcoin(6340.84);
+        this.bitcoin = new Bitcoin();
     }
 
     @Test
@@ -29,9 +27,15 @@ public class BitcoinTest
     }
 
     @Test
+    public void bitcoinIdShouldEqualZero()
+    {
+        Assert.assertEquals(0, this.bitcoin.id);
+    }
+
+    @Test
     public void canAccessBitcoinPrice()
     {
-        Assert.assertEquals(6340.84, this.bitcoin.USDPrice);
+        Assert.assertEquals(-1.0, this.bitcoin.USDPrice);
     }
 
     @Test

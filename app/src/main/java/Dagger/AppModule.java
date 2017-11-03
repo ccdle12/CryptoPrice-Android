@@ -2,6 +2,8 @@ package Dagger;
 
 import javax.inject.Singleton;
 
+import CustomClasses.Coins.Bitcoin;
+import CustomClasses.Exchanges.ExchangesGraph;
 import Dashboard.PFDashboardPresenter;
 import Dashboard.PFDashboardVC;
 import Managers.PFDataManager;
@@ -33,5 +35,18 @@ public class AppModule
 
     @Provides
     @Singleton
-    public PFDataManager proviesPFDataManager() { return new PFDataManager(); }
+    public PFDataManager providesPFDataManager() { return new PFDataManager(); }
+
+    @Provides
+    public Bitcoin providesBitcoin()
+    {
+        return new Bitcoin();
+    }
+
+    @Provides
+    @Singleton
+    public ExchangesGraph providesExchangesGraph()
+    {
+        return new ExchangesGraph();
+    }
 }

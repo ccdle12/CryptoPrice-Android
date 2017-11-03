@@ -1,4 +1,4 @@
-package CustomClasses;
+package CustomClasses.Coins;
 
 /**
  * Created by christophercoverdale on 03/11/2017.
@@ -6,9 +6,10 @@ package CustomClasses;
 
 public class Bitcoin extends CryptoCurrency
 {
-    public Bitcoin(double price)
+    public Bitcoin()
     {
-        this.USDPrice = price;
+        this.id = 0;
+        this.USDPrice = -1;
         this.ticker = "BTC";
     }
 }

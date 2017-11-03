@@ -5,11 +5,7 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import CustomClasses.Bitcoin;
 import Dashboard.PFDashboardPresenter;
-import Managers.PFDataManager;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by christophercoverdale on 03/11/2017.
