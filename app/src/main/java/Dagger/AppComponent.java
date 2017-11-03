@@ -4,7 +4,9 @@ import com.example.christophercoverdale.cryptoprice_android.MainActivity;
 
 import javax.inject.Singleton;
 
+import Dashboard.PFDashboardPresenter;
 import Dashboard.PFDashboardVC;
+import Managers.PFDataManager;
 import dagger.Component;
 
 /**
@@ -15,6 +17,7 @@ import dagger.Component;
 @Singleton
 public interface AppComponent
 {
-    void inject(PFDashboardVC dashboardVC);
     void inject(MainActivity mainActivity);
+    void inject(PFDashboardVC dashboardVC);
+    void inject(PFDashboardPresenter pFDashboardPresenter);
 }

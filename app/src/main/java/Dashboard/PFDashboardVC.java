@@ -23,7 +23,7 @@ public class PFDashboardVC extends Fragment implements PFDashboardPresenter.PFDa
 {
     public @Inject PFDashboardPresenter pfDashboardPresenter;
 
-    /** Setup Methods **/
+    /** Setup and Constructor Methods **/
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState)

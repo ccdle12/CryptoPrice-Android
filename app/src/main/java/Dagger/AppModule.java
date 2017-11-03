@@ -4,6 +4,7 @@ import javax.inject.Singleton;
 
 import Dashboard.PFDashboardPresenter;
 import Dashboard.PFDashboardVC;
+import Managers.PFDataManager;
 import dagger.Module;
 import dagger.Provides;
 
@@ -17,6 +18,7 @@ public class AppModule
     public AppModule() {};
 
     @Provides
+    @Singleton
     public PFDashboardPresenter providePFDashboardPresenter()
     {
         return new PFDashboardPresenter();
@@ -28,4 +30,8 @@ public class AppModule
     {
         return new PFDashboardVC();
     }
+
+    @Provides
+    @Singleton
+    public PFDataManager proviesPFDataManager() { return new PFDataManager(); }
 }
