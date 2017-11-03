@@ -27,4 +27,23 @@ public class BitcoinTest
     {
         Assert.assertTrue(this.bitcoin != null);
     }
+
+    @Test
+    public void canAccessBitcoinPrice()
+    {
+        Assert.assertEquals(6340.84, this.bitcoin.USDPrice);
+    }
+
+    @Test
+    public void canChangeBitcoinPrice()
+    {
+        this.bitcoin.USDPrice = 7000;
+        Assert.assertEquals(7000.0, this.bitcoin.USDPrice);
+    }
+
+    @Test
+    public void canGetBTCTicker()
+    {
+        Assert.assertEquals("BTC", this.bitcoin.getTickerSymbol());
+    }
 }
