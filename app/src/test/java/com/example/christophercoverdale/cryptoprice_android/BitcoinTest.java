@@ -44,6 +44,6 @@ public class BitcoinTest
     @Test
     public void canGetBTCTicker()
     {
-        Assert.assertEquals("BTC", this.bitcoin.getTickerSymbol());
+        Assert.assertEquals("BTC", this.bitcoin.ticker);
     }
 }

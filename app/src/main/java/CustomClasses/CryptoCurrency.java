@@ -7,10 +7,5 @@ package CustomClasses;
 public abstract class CryptoCurrency
 {
     public double USDPrice;
-    private String ticker = "BTC";
-
-    public String getTickerSymbol()
-    {
-        return this.ticker;
-    }
+    public String ticker;
 }

@@ -9,5 +9,6 @@ public class Bitcoin extends CryptoCurrency
     public Bitcoin(double price)
     {
         this.USDPrice = price;
+        this.ticker = "BTC";
     }
 }
