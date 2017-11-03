@@ -53,4 +53,11 @@ public class ExampleInstrumentedTest
     {
         onView(withId(R.id.dashboard_layout)).check(matches(isDisplayed()));
     }
+
+    @Test
+    public void pfDashboardPresenterIsInjected()
+    {
+        assertTrue(mainActivity.pfDashboardVC.pfDashboardPresenter != null);
+    }
+
 }
