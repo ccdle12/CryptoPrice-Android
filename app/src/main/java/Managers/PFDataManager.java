@@ -54,6 +54,14 @@ public class PFDataManager
         this.pfDashboardPresenterDelegate = pfDashboardPresenter;
     }
 
+
+
+    /** Testing the updating price methods **/
+    public void updateAllPrices()
+    {
+
+    }
+
     public void getUpdatedPrice(String exchange, int coinID)
     {
         Exchange requestedExchange = this.exchangesGraph.getExchange(exchange);

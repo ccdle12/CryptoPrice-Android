@@ -1,6 +1,7 @@
 package CustomClasses.Exchanges;
 
 import CustomClasses.Coins.Bitcoin;
+import CustomClasses.Coins.CryptoCurrency;
 
 /**
  * Created by christophercoverdale on 03/11/2017.
@@ -23,8 +24,13 @@ public class Coinbase extends Exchange
     }
 
 
+    /** Make an HTTP Requset to get updated price for this coin **/
+    /** Move the retrofit call to its own class **/
     @Override
-    public String getUpdatedPrice(int coinID) {
-        return null;
+    public String getUpdatedPrice(int coinID)
+    {
+        CryptoCurrency coin = this.coins.get(coinID);
+
+
     }
 }
