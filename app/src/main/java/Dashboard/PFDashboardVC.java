@@ -3,17 +3,26 @@ package Dashboard;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.christophercoverdale.cryptoprice_android.R;
 
+import java.io.IOException;
+import java.util.concurrent.Callable;
+
 import javax.inject.Inject;
 
 import Dagger.AppComponent;
 import Dagger.AppModule;
 import Dagger.DaggerAppComponent;
+import Utils.PFNetworkUtils;
+import rx.Observable;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by christophercoverdale on 02/11/2017.

@@ -8,7 +8,6 @@ import javax.inject.Inject;
 import Dagger.AppComponent;
 import Dagger.AppModule;
 import Dagger.DaggerAppComponent;
-import Dashboard.PFDashboardPresenter;
 import Dashboard.PFDashboardVC;
 
 public class MainActivity extends AppCompatActivity

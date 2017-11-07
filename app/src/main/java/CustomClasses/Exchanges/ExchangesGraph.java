@@ -1,4 +1,5 @@
 package CustomClasses.Exchanges;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -9,6 +10,7 @@ public class ExchangesGraph
 {
     private static ExchangesGraph instance = null;
     private static HashMap<String, Exchange> exchangesTable;
+    public static ArrayList<Exchange> exchangesArrayList;
 
 
     private ExchangesGraph() {}
@@ -19,6 +21,8 @@ public class ExchangesGraph
         {
             instance = new ExchangesGraph();
             exchangesTable = new HashMap<>();
+            exchangesArrayList = new ArrayList<>();
+
             initAllExchanges();
         }
 
@@ -29,6 +33,8 @@ public class ExchangesGraph
     private static void initAllExchanges()
     {
         Coinbase coinbase = new Coinbase();
+
+        exchangesArrayList.add(coinbase);
         exchangesTable.put(coinbase.exchangeName, coinbase);
     }
 

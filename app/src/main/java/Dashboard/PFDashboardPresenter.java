@@ -1,7 +1,5 @@
 package Dashboard;
 
-import android.util.Log;
-
 import javax.inject.Inject;
 
 import Dagger.AppComponent;
@@ -36,6 +34,10 @@ public class PFDashboardPresenter
     {
         this.injectDependencies();
         this.setPfDataManagerDelegate();
+
+        //TODO: Testing network utils works
+//        this.pfDataManager.getUpdatedPrice("Coinbase", 0);
+        this.pfDataManager.updateAllPrices();
     }
 
     private void injectDependencies()

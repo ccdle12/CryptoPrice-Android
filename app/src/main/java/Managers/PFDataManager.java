@@ -1,8 +1,11 @@
 package Managers;
 
+import java.util.ArrayList;
+
 import javax.inject.Inject;
 
 import CustomClasses.Exchanges.Exchange;
+import CustomClasses.Exchanges.ExchangeDelegate;
 import CustomClasses.Exchanges.ExchangesGraph;
 import Dagger.AppComponent;
 import Dagger.AppModule;
@@ -13,11 +16,13 @@ import Dashboard.PFDashboardPresenter;
  * Created by christophercoverdale on 03/11/2017.
  */
 
-public class PFDataManager
+public class PFDataManager implements ExchangeDelegate
 {
+
     public @Inject ExchangesGraph exchangesGraph;
 
-    /** Delegate Interface **/
+
+    /** Dashboard Presenter Delegate Interface **/
     public interface PFDashboardPresenterDelegate
     {
 
@@ -56,15 +61,31 @@ public class PFDataManager
 
 
 
-    /** Testing the updating price methods **/
+    /** Calls to update prices **/
     public void updateAllPrices()
     {
+        ArrayList<Exchange> exchangeArrayList = ExchangesGraph.exchangesArrayList;
 
+        for (Exchange eachExchange : exchangeArrayList)
+        {
+            for (int i = 0; i < eachExchange.coinCount; i++)
+                getUpdatedPrice(eachExchange.exchangeName, i);
+        }
     }
 
     public void getUpdatedPrice(String exchange, int coinID)
     {
         Exchange requestedExchange = this.exchangesGraph.getExchange(exchange);
-        String tempTestResponse = requestedExchange.getUpdatedPrice(coinID);
+        requestedExchange.setDelegate(this);
+        requestedExchange.exchangeUpdatePrice(exchange, coinID);
+    }
+
+    @Override
+    public void exchangeStateHasChanged(String exchange, int coinID)
+    {
+        Exchange requestedExchange = this.exchangesGraph.getExchange(exchange);
+
+        System.out.println("Coin that was updated: " + requestedExchange.coins.get(coinID).ticker);
+        System.out.println("Callback coin price: " + requestedExchange.coins.get(coinID).USDPrice);
     }
 }
