@@ -32,10 +32,5 @@ public class CoinbaseTest
         Assert.assertEquals(-1.0, this.coinbase.bitcoin.USDPrice);
     }
 
-    @Test
-    public void testingTheCoinBaseRequest()
-    {
-        this.coinbase.getUpdatedPrice(0);
-    }
 
 }
