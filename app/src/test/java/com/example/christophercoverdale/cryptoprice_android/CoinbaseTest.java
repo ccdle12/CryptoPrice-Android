@@ -55,5 +55,11 @@ public class CoinbaseTest
         Assert.assertTrue(updatedCoin.USDPrice > 0);
     }
 
+    @Test
+    public void sizeOfCoinCount()
+    {
+        Assert.assertTrue(coinbase.coinCount == coinbase.coins.size());
+    }
+
 
 }

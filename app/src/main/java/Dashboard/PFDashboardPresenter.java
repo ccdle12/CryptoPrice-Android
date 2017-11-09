@@ -37,7 +37,7 @@ public class PFDashboardPresenter
 
         //TODO: Testing network utils works
 //        this.pfDataManager.getUpdatedPrice("Coinbase", 0);
-        this.pfDataManager.updateAllPrices();
+        this.pfDataManager.updateAllExchangePrices();
     }
 
     private void injectDependencies()

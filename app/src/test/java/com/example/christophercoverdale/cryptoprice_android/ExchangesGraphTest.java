@@ -28,4 +28,16 @@ public class ExchangesGraphTest
     {
         Assert.assertTrue(this.exchangesGraph != null);
     }
+
+    @Test
+    public void checkingIfExchangesGraphContainsCoinbase()
+    {
+        Assert.assertTrue(exchangesGraph.containsExchange("Coinbase"));
+    }
+
+    @Test
+    public void checkingIfExchangesGraphContainsFakeExchange()
+    {
+        Assert.assertFalse(exchangesGraph.containsExchange("blaaah"));
+    }
 }

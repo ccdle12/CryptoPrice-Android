@@ -44,4 +44,9 @@ public class ExchangesGraph
         return exchangesTable.get(exchange);
     }
 
+    public boolean containsExchange(String exchange)
+    {
+        return exchangesTable.containsKey(exchange);
+    }
+
 }

@@ -34,6 +34,8 @@ public class Coinbase extends Exchange
         this.coins.add(this.bitcoin.id, this.bitcoin);
         this.coins.add(this.ethereum.id, this.ethereum);
         this.coins.add(this.litecoin.id, this.litecoin);
+
+        this.coinCount = this.coins.size();
     }
 
 

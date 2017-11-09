@@ -15,7 +15,7 @@ public abstract class Exchange implements ExchangeUpdateState
 {
 
     public String exchangeName;
-    public int coinCount = 3;
+    public int coinCount;
 
     public Bitcoin bitcoin;
     public Litecoin litecoin;

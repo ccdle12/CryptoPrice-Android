@@ -62,7 +62,21 @@ public class PFDataManager implements ExchangeDelegate
 
 
     /** Calls to update prices **/
-    public void updateAllPrices()
+    public void updatePricesOnExchange(String exchange)
+    {
+        if (!exchangesGraph.containsExchange(exchange))
+            return;
+
+        Exchange requestedExchange = this.exchangesGraph.getExchange(exchange);
+
+        if (requestedExchange != null)
+        {
+            for (int i = 0; i < requestedExchange.coinCount; i++)
+                this.getUpdatedPrice(requestedExchange.exchangeName, i);
+        }
+    }
+
+    public void updateAllExchangePrices()
     {
         ArrayList<Exchange> exchangeArrayList = ExchangesGraph.exchangesArrayList;
 
@@ -73,7 +87,7 @@ public class PFDataManager implements ExchangeDelegate
         }
     }
 
-    public void getUpdatedPrice(String exchange, int coinID)
+    private void getUpdatedPrice(String exchange, int coinID)
     {
         Exchange requestedExchange = this.exchangesGraph.getExchange(exchange);
         requestedExchange.setDelegate(this);
